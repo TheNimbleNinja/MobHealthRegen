@@ -1,0 +1,12 @@
+[{
+	"modid": "MobHealthRegen",
+	"name": "mobhealthregen",
+	"version": "1.1",
+	"mcversion": "1.20.1",
+	"description": "regenerates mobs health on player death",
+	"authorList": ["thenimbleninja"],
+	"credits": "google gemmini",
+	"url": "${mod_url}",
+	"updateJSON": "${mod_update_json}",
+	"logoFile": "${mod_logo_path}"
+}]

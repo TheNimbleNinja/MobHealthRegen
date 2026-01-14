@@ -2,16 +2,13 @@ package com.thenimbleninja.mobhealthregen;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
-@Mod(modid = MobHealthRegen.MODID, name = MobHealthRegen.NAME, version = MobHealthRegen.VERSION)
+@Mod(MobHealthRegen.MOD_ID)
 public class MobHealthRegen {
-    public static final String MODID = "mobhealthregen";
-    public static final String NAME = "Mob Health Regen";
-    public static final String VERSION = "1.0";
+    public static final String MOD_ID = "mobhealthregen";
 
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
+    public MobHealthRegen() {
+        // Register the event listener to the Forge Event Bus
         MinecraftForge.EVENT_BUS.register(new MobHealthEventHandler());
     }
 }
