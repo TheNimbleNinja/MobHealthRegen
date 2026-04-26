@@ -1,17 +1,20 @@
 package com.thenimbleninja.mobhealthregen;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.common.NeoForge;
 
-@Mod(modid = MobHealthRegen.MODID, name = MobHealthRegen.NAME, version = MobHealthRegen.VERSION)
+@Mod(MobHealthRegen.MOD_ID)
 public class MobHealthRegen {
-    public static final String MODID = "mobhealthregen";
-    public static final String NAME = "Mob Health Regen";
-    public static final String VERSION = "1.0";
+    public static final String MOD_ID = "mobhealthregen";
 
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(new MobHealthEventHandler());
+    public MobHealthRegen(ModContainer container, IEventBus modEventBus) {
+        // Register the config FIRST
+        container.registerConfig(ModConfig.Type.COMMON, com.thenimbleninja.mobhealthregen.ModConfig.SPEC);
+
+        // Register the handler to the NeoForge event bus
+        NeoForge.EVENT_BUS.register(new MobHealthEventHandler());
     }
 }

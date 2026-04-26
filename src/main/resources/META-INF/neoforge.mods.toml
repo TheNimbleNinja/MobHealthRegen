@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="mobhealthregen"
+version="1.0"
+displayName="Mob Health Regen"
+authors="TheNimbleNinja"
+description="Heals mobs when a player dies."
+
+[[dependencies.mobhealthregen]]
+modId="neoforge"
+type="required"
+versionRange="[21,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mobhealthregen]]
+modId="minecraft"
+type="required"
+versionRange="[1.21,)"
+ordering="NONE"
+side="BOTH"
